@@ -1,0 +1,135 @@
+* {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    box-sizing: border-box;
+    font-family: 'Montserrat', Arial, Helvetica, sans-serif;
+}
+
+@font-face {
+    font-family: "Montserrat";
+    src: url("fonts/Montserrat-Regular.ttf");
+}
+
+@font-face {
+    font-family: "Montserrat-Bold";
+    src: url("fonts/Montserrat-Bold.ttf");
+}
+
+.bg-image {
+    position: relative;
+    background-image: url("https://www.wallsauce.com/pdi/336756/1000/0/0/new-york-city-map-wallpaper.jpg");
+    /* Full height */
+    height: 100vh;
+    /* Center and scale the image nicely */
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.bg-cover {
+    position: absolute;
+    /* Full height */
+    top: 0;
+    height: 100vh;
+    width: 100vw;
+    opacity: 0.7;
+    background-image: linear-gradient(to right top, #d16ba5, #c777b9, #ba83ca, #aa8fd8, #9a9ae1, #8aa7ec, #79b3f4, #69bff8, #52cffe, #41dfff, #46eefa, #5ffbf1);
+}
+
+.page {
+    position: absolute;
+    top: 0;
+    height: 100vh;
+    width: 100vw;
+    display: flex;
+    justify-content: center;
+    padding-top: 40px;
+}
+
+h1 {
+    font-family: 'Montserrat-Bold', sans-serif;
+    color: red;
+    margin-top: 10px;
+}
+
+main {
+    width: 90vw;
+    height: 80vh;
+    display: flex;
+    background-color: white;
+    border-radius: 20px;
+}
+
+.card {
+    padding-bottom: 30px;
+}
+
+.card h2 {
+    padding-bottom: 8px;
+}
+
+.side {
+    padding: 10px 10px;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    width: 27%;
+}
+
+.side .infos {
+    margin-top: 40px;
+    display: flex;
+    flex-direction: column;
+    height: 90%;
+}
+
+.side .infos p {
+    padding: 5px;
+}
+
+button {
+    position: relative;
+    width: 300px;
+    height: 60px;
+    margin: 20px auto;
+    padding: 0;
+    font-size: 22px;
+    text-align: center;
+    color: white;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    overflow: hidden;
+    text-shadow: 0 1px 2px rgba(0, 0, 0, 0.25);
+    transition: transform 0.4s ease-in-out;
+    background: #a615ca;
+    border-bottom: 2px solid #570f86;
+    box-shadow: inset 0 -2px #570f86;
+}
+
+button:active {
+    top: 1px;
+    box-shadow: none;
+}
+
+.icon {
+    position: absolute;
+    left: 20px;
+    width: 24px;
+    height: 24px;
+    transition: all 0.4s ease-in-out;
+}
+
+button:hover .icon {
+    transform: rotate(360deg) scale(1.2);
+}
+
+.wrapper {
+    padding: 8px 8px;
+    width: 70%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}

@@ -1,0 +1,61 @@
+<div class="bg-image"></div>
+<div class="bg-cover"></div>
+<div class="page">
+<main>
+<div class="side">
+  <h1>Tracker GPS</h1>
+  <div class="infos"> 
+    <div class="card"> 
+      <h2>Données du capteur</h2>
+      <p>Latitude : {{latitude}}</p>
+      <p>Longitude : {{longitude}}</p>
+      <p> Température : {{temperature}}<span>&#176;</span>C</p>
+      </div>
+    <div class="card">      
+      <h2>Lieu trouvé</h2>
+      <p>{{lieu}} {{adresse}}, {{cp}} {{ville}}</p>
+      <p>{{pays}}</p>
+      </div>
+
+
+      </div>
+  <button onClick="window.location.reload();"><img class="icon" src="https://htmlacademy.ru/assets/icons/reload-6x-white.png">Rafraîchir la page</button>
+</div>
+
+<div class="wrapper">
+     <div id="map" style="width: 100%; height: 100%;"></div>
+</div>
+</main>
+</div>
+<script>
+const iconFeature = new ol.Feature({
+  geometry: new ol.geom.Point(ol.proj.fromLonLat([{{longitude}}, {{latitude}}])),
+  name: 'Pointer',
+});
+
+const map = new ol.Map({
+  target: 'map',
+  layers: [
+    new ol.layer.Tile({
+      source: new ol.source.OSM(),
+    }),
+    new ol.layer.Vector({
+      source: new ol.source.Vector({
+        features: [iconFeature]
+      }),
+      style: new ol.style.Style({
+        image: new ol.style.Icon({
+          anchor: [0.5, 32],
+          anchorXUnits: 'fraction',
+          anchorYUnits: 'pixels',
+          src: 'https://icons.iconarchive.com/icons/paomedia/small-n-flat/32/map-marker-icon.png'
+        })
+      })
+    })
+  ],
+  view: new ol.View({
+    center: ol.proj.fromLonLat([{{longitude}}, {{latitude}}]),
+    zoom: 18
+  })
+});
+</script>
